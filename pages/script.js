@@ -31,7 +31,7 @@ const Card = (item,index) => {
 
 	return `<div class="book">
 						<div class="ecover">
-							<img src="/assets/image/${imgPhoto}" alt="cover">
+							<img src="../assets/image/${imgPhoto}" alt="cover">
 						</div>
 						<div class="book__right">
 							<div class="book__info">
@@ -41,7 +41,7 @@ const Card = (item,index) => {
 							</div>
 							<div class="book__icons">
 								<button class="buy-button" data-title="${title}" data-author="${author}" data-price="${price}" onclick="addToCart(event)">ADD TO CART</button>
-								<button class="bth-show" onclick="openModal(event)" data-index="${index}"><img src="/assets/icon/dots-three-vertical-icon-original.svg" class="show-more" alt="more"></button>
+								<button class="bth-show" onclick="openModal(event)" data-index="${index}"><img src="../assets/icon/dots-three-vertical-icon-original.svg" class="show-more" alt="more"></button>
 								</div>
 						</div>
 					</div>`;
@@ -64,7 +64,7 @@ function createPageHeader () {
 	header.innerHTML = `<div class="containet">
 												<div class="header-container">
 													<div class="logo-box">
-														<img class="logo-icon" src="/assets/icon/logo.svg">
+														<img class="logo-icon" src="../assets/icon/logo.svg">
 														<div class="logo-text">
 															<h1 class="logo-title">Pages of Wisdom</h1>
 															<p class="logo-suptitle">books shop</p>
@@ -78,7 +78,7 @@ function createPageHeader () {
 															<li><a href="../pages/index.html" class="menu__link active">Catalog</a></li>
 															<li><a href="../pages/cart.html" class="menu__link">Delivery</a></li>
 															<li><button class="cart_icon" id="cart" onclick="closeCart();">
-															<img class="card-icon" src="/assets/icon/card.svg">
+															<img class="card-icon" src="../assets/icon/card.svg">
 															<div class="cart__num" id="cart_num" ;">0</div>
 														</button></li>
 														</ul>
@@ -122,8 +122,8 @@ function openModal(event) {
 
 	let tempcard = `
 										<div class="popup__box">
-											<button class="popup__close" onclick="closeModal()"><img class="button__close fl" src="/assets/icon/vector.svg"></button>
-											<img class="popup-img" src="/assets/image/${imgPhoto}" alt="cover">
+											<button class="popup__close" onclick="closeModal()"><img class="button__close fl" src="../assets/icon/vector.svg"></button>
+											<img class="popup-img" src="../assets/image/${imgPhoto}" alt="cover">
 											<div class="book__info">
 												<h3 class="popup-title">${title}</h3>
 												<h5 class="popup-author">${author}</h5>
@@ -168,14 +168,14 @@ function createFooter () {
 	footer.innerHTML = `<div class="containet">
 												<div class="footer-box">
 													<div class="logo-box">
-														<img class="logo-icon fl" src="/assets/icon/logo.svg">
+														<img class="logo-icon fl" src="../assets/icon/logo.svg">
 														<div class="logo-text">
 															<h1 class="logo-title white">Pages of Wisdom</h1>
 															<p class="logo-suptitle white">books shop</p>
 														</div>
 												</div>
 												<div class="phone">
-													<img class="phone-icon fl" src="/assets/icon/phone.svg">
+													<img class="phone-icon fl" src="../assets/icon/phone.svg">
 													<a href="tel:+90506000000" class="phone-number white">+90506000000</a>
 												</div>
 											</div>`;
