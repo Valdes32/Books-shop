@@ -55,7 +55,6 @@ html,body{
   transition: 0.1s;
   cursor: pointer;
   position: relative;
-  display: flex;
   justify-content: center;
   align-items: center;
   object-fit: contain;
@@ -542,7 +541,9 @@ input.invalid {
 		z-index: 6;
 		transition: all 0.3s ease 0s;
 	}
-	
+	.active_icon{
+		transform: rotate(90deg);
+	}
 	.menu__btn > span,
 	.menu__btn > span::before,
 	.menu__btn > span::after {
@@ -584,6 +585,10 @@ input.invalid {
 		box-shadow: 0 0 0 9999px rgba(41, 41, 41, 0.6);
 		transform: translateX(0);
 	}
+	.area_active{
+		visibility: visible;
+		}
+		
 	
 	.menu__list {
 		padding: 0;
@@ -618,6 +623,10 @@ input.invalid {
     min-width: 500px;
 		width: 100%;
 	}
+	.popup-img {
+    margin: auto 0;
+    max-height: 40%;
+	}
 }
 @media (max-width: 500px) {
  .total-order{
@@ -638,5 +647,15 @@ input.invalid {
 	outline: 1px solid transparent;
 	box-shadow: 4px 3px 16px #332;
 	display: inline-block;
+}
+.popup__box{
+	flex-direction: column;
+	overflow: auto;
+}
+.popup-img{
+	display: none;
+}
+.popup-title {
+	margin-top: 0px;
 }
 }

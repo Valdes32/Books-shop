@@ -16,6 +16,7 @@ const getData = async () => {
 	createCart();
 	createPopup();
 	createFooter();
+	burger();
 	console.log(dataGlobal);
 })();
 
@@ -87,6 +88,33 @@ function createPageHeader () {
 											</div>`;
 	wrapper.prepend(header);
 }
+
+	/*Меню бургер*/
+
+	function burger() {
+	const iconMenu = document.querySelector('.menu__btn');
+	const menuBody = document.querySelector('.menu__body');
+	const menuArea = document.querySelector('.menu__area');
+	if (iconMenu){
+		iconMenu.addEventListener("click", function (e){
+			document.body.classList.toggle('lock')
+			iconMenu.classList.toggle('active_icon');
+			menuBody.classList.toggle('active_menu');
+			menuArea.classList.toggle('area_active');
+		});
+	}
+	
+	const menu = document.querySelector('.menu__btn');
+		document.addEventListener('click', (e) =>{
+			const click = e.composedPath().includes(menu);
+			if ( !click) {
+				document.body.classList.remove('lock')
+				iconMenu.classList.remove('active_icon');
+				menuBody.classList.remove('active_menu');
+				menuArea.classList.remove('area_active');
+			}
+		})
+	}
 
 //Create space for list books
 
@@ -249,3 +277,4 @@ function updateCart() {
 		}
 		else {document.querySelector('.cart').classList.add('open');}
 	}
+

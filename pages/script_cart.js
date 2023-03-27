@@ -146,3 +146,30 @@ function validateForm() {
 			}
 		}
 	}
+
+	/*Меню бургер*/
+const iconMenu = document.querySelector('.menu__btn');
+const logoMenu = document.querySelector('.header__logo');
+const menuBody = document.querySelector('.menu__body');
+const menuArea = document.querySelector('.menu__area');
+if (iconMenu){
+	iconMenu.addEventListener("click", function (e){
+		document.body.classList.toggle('_lock')
+		iconMenu.classList.toggle('active_icon');
+		menuBody.classList.toggle('active_menu');
+		logoMenu.classList.toggle('logo_active');
+		menuArea.classList.toggle('area_active');
+	});
+}
+
+const menu = document.querySelector('.menu__btn');
+	document.addEventListener('click', (e) =>{
+		const click = e.composedPath().includes(menu);
+		if ( !click) {
+			document.body.classList.remove('_lock')
+			iconMenu.classList.remove('active_icon');
+			menuBody.classList.remove('active_menu');
+			logoMenu.classList.remove('logo_active');
+			menuArea.classList.remove('area_active');
+		}
+	})
