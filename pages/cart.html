@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+	<title>Bookshop</title>
+</head>
+<body>
+<div class="wrapper">
+	<header class="header">
+		<div class="containet">
+			<div class="header-container">
+			<div class="logo-box">
+				<img class="logo-icon" src="/assets/icon/logo.svg">
+				<div class="logo-text">
+					<h1 class="logo-title">Pages of Wisdom</h1>
+					<p class="logo-suptitle">books shop</p>
+				</div>
+			</div>
+			<div class="menu__btn" for="menu__toggle">
+				<span></span>
+			</div>
+			<nav class="menu__body">
+				<ul class="menu__list">
+					<li><a href="../pages/index.html" class="menu__link">Catalog</a></li>
+					<li><a href="../pages/cart.html" class="menu__link active">Delivery</a></li>
+					<li><img class="card-icon menu__link" src="/assets/icon/card.svg"></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	</header>
+	<section class="card-page">
+		<div class="containet">
+			<div class="order-box">
+				<form id="orderForm" onsubmit="submitForm()">
+					<label for="name">Name:</label>
+					<input type="text" id="name" name="name" minlength="4" pattern="[a-zA-Z]+" required>
+					<br><br>
+					
+					<label for="surname">Surname:</label>
+					<input type="text" id="surname" name="surname" minlength="5" pattern="[a-zA-Z]+" required>
+					<br><br>
+					
+					<label for="deliveryDate">Delivery Date:</label>
+					<input type="date" id="deliveryDate" name="deliveryDate" min="2023-03-28" required>
+					<br><br>
+					
+					<label for="street">Street:</label>
+					<input type="text" id="street" name="street" minlength="5" pattern="[a-zA-Z0-9\s]+" required>
+					<br><br>
+					
+					<label for="houseNumber">House Number:</label>
+					<input type="number" id="houseNumber" name="houseNumber" min="1" required>
+					<br><br>
+					
+					<label for="flatNumber">Flat Number:</label>
+					<input type="number" id="flatNumber" name="flatNumber" min="1" pattern="^[1-9]\d*(\-\d+)?$" required>
+					<br><br>
+					
+					<label>Payment Type:</label>
+					<br>
+					<input type="radio" id="cash" name="paymentType" value="cash" required>
+					<label for="cash">Cash</label>
+					<br>
+					<input type="radio" id="card" name="paymentType" value="card" required>
+					<label for="card">Card</label>
+					<br><br>
+					
+					<label>Choose 2 Gifts:</label>
+					<br>
+					<input type="checkbox" id="gift1" name="gift1" value="packAsAGift" onclick="limitCheckBoxSelections()">
+					<label for="gift1">Pack as a gift</label>
+					<br>
+					<input type="checkbox" id="gift2" name="gift2" value="addPostcard" onclick="limitCheckBoxSelections()">
+					<label for="gift2">Add postcard</label>
+					<br>
+					<input type="checkbox" id="gift3" name="gift3" value="provide2PercentDiscount" onclick="limitCheckBoxSelections()">
+					<label for="gift3">Provide 2% discount to the next time</label>
+					<br>
+					<input type="checkbox" id="gift4" name="gift4" value="brandedPenOrPencil" onclick="limitCheckBoxSelections()">
+					<label for="gift4">Branded pen or pencil</label>
+					<br><br>
+					
+					<button type="submit" id="completeButton" disabled>Complete</button>
+				</form>
+			</div>
+		</div>
+	</section>
+	<footer class="footer">
+		<div class="containet">
+			<div class="footer-box">
+				<div class="logo-box">
+					<img class="logo-icon fl" src="/assets/icon/logo.svg">
+					<div class="logo-text">
+						<h1 class="logo-title white">Pages of Wisdom</h1>
+						<p class="logo-suptitle white">books shop</p>
+					</div>
+			</div>
+			<div class="phone">
+				<img class="phone-icon fl" src="/assets/icon/phone.svg">
+				<p class="phone-number white">+90506000000</p>
+			</div>
+		</div>
+	</footer>
+	<script src="script_cart.js"></script>
+	</div>	
+</body>
+</html>
