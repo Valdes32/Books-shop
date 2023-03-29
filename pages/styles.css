@@ -68,9 +68,9 @@ html,body{
 	padding: 20px 10px;
 	display: flex;
 	flex-direction: column;
-	height: 352px;
+	height: 400px;
 	width: 184px;
-	justify-content: center;
+	justify-content: space-between;
 	gap:11px;
 	background-color: #FFFF;
 	border-radius: 9px;
@@ -86,6 +86,12 @@ html,body{
 	align-items: center;
 	position: relative;
 	z-index: 1;
+}
+.book__right{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .ecover {
