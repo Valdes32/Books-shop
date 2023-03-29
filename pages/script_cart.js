@@ -34,7 +34,7 @@ function validateForm() {
 		
 		const today = new Date();
 		const deliveryDateValue = new Date(deliveryDate.value);
-		if (deliveryDateValue <= today) {
+		if (deliveryDateValue < today) {
 			deliveryDate.classList.add("invalid");
 			deliveryDate.setCustomValidity('The field is invalid');
 			deliveryDate.reportValidity();
