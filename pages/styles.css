@@ -27,7 +27,7 @@ html,body{
 	flex-direction: column;
 	min-height: 100%;
 }
-.containet{
+.container{
 	max-width: 1280px;
 	padding: 0 40px;
 	margin: 0 auto;
@@ -74,6 +74,7 @@ html,body{
 	gap:11px;
 	background-color: #FFFF;
 	border-radius: 9px;
+	border: 1px #ff983d solid;
 }
 
 .book_card{
@@ -309,6 +310,8 @@ border-bottom: 1px solid #4D2900;
 }
 .order-box{
 	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
 	margin: 0 auto;
 	padding: 15px;
 	max-height: 800px;
@@ -316,7 +319,35 @@ border-bottom: 1px solid #4D2900;
 	height: 100%;
 	width: 100%;
 	background-color: #FFFF;
+	border-radius: 9px;
+	border: solid 1px #ff983d;
+	justify-content: center;
+	gap: 15px;
 }
+.infoUser{
+	display: flex;
+	flex-direction: column;
+	width: 300px;
+}
+.adress{
+	display: flex;
+	flex-direction: column;
+	width: 300px;
+}
+.payment{
+	display: flex;
+	flex-direction: column;
+	width: 300px;
+}
+.gifts{
+	display: flex;
+	flex-direction: column;
+	width: 300px;
+}
+
+
+
+
 .order-button{
 	height: 35px;
 	min-width: 300px;
@@ -495,11 +526,18 @@ border-bottom: 1px solid #4D2900;
 	font-size: 25px;
 	color: #241400;
 }
-.lock{
+
+._lock{
 	overflow: hidden;
 }
 input.invalid {
+	border-radius: 5px;
 	border: 2px solid red;
+}
+.error-message {
+	display: none;
+  color: red;
+  font-size: 0.8rem;
 }
 .phone-number{
 	text-decoration: none;
@@ -516,6 +554,8 @@ input.invalid {
 	display: flex;
 	flex-direction: column;
 	overflow: auto;
+	border: 1px #000 solid;
+	padding: 5px;
 }
 .item_li{
 	margin-bottom: 5px ;
