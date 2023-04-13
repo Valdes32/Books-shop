@@ -36,6 +36,7 @@ function validationTextInputs() {
     let error_message = this.parentNode.querySelector('.error-message');
     if (this.getAttribute('data-length') > this.value.length || 
         this.name == 'name' && (this.value.includes(' ') || /\d|\W/.test(this.value)) ||
+				this.name == 'surname' && (this.value.includes(' ') || /\d|\W/.test(this.value)) ||
         this.name == 'street' && /^-|^—|[^a-zA-Z0-9-\s]/.test(this.value) ||
         this.name == 'flatNumber' && (/^-|^—|[^-—\d]/.test(this.value) || this.value == '')) {
         this.classList.remove('valid');
@@ -129,21 +130,21 @@ function enableSubmitButton() {
 		const gift2 = document.getElementById("gift2");
 		const gift3 = document.getElementById("gift3");
 		const gift4 = document.getElementById("gift4");
-	
+
 		if (gift1.checked) {
-			gifts.push(gift1.value);
+			gifts.push(gift1.nextElementSibling.textContent);
 		}
 		if (gift2.checked) {
-			gifts.push(gift2.value);
+			gifts.push(gift2.nextElementSibling.textContent);
 		}
 		if (gift3.checked) {
-			gifts.push(gift3.value);
+			gifts.push(gift3.nextElementSibling.textContent);
 		}
 		if (gift4.checked) {
-			gifts.push(gift4.value);
+			gifts.push(gift4.nextElementSibling.textContent);
 		}
 	
-		const message = `Order details: <br>Name: ${name}<br>Surname: ${surname}<br><br>Delivery Date: ${deliveryDate}<br><br>Street: ${street}<br>House Number: ${houseNumber}<br>Flat Number: ${flatNumber}<br><br>Payment Type: ${paymentType}<br><br>Gifts: ${gifts.join(", ")}`;
+		const message = `Order details: <br>Name: ${name}<br>Surname: ${surname}<br><br>Delivery Date: ${deliveryDate}<br><br>Street: ${street}<br>House Number: ${houseNumber}<br>Flat Number: ${flatNumber}<br><br>Payment Type: ${paymentType}<br><br>Gifts:<br> ${gifts.join("<br> ")}`;
 	
 
     // Вставьте сообщение в элемент div с классом "order-box"
@@ -161,7 +162,6 @@ if (iconMenu){
 		document.body.classList.toggle('_lock')
 		iconMenu.classList.toggle('active_icon');
 		menuBody.classList.toggle('active_menu');
-		logoMenu.classList.toggle('logo_active');
 	});
 }
 
@@ -172,7 +172,6 @@ const menu = document.querySelector('.menu__btn');
 			document.body.classList.remove('_lock')
 			iconMenu.classList.remove('active_icon');
 			menuBody.classList.remove('active_menu');
-			logoMenu.classList.remove('logo_active');
 		}
 	})
 
